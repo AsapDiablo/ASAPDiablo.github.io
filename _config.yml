@@ -100,4 +100,4 @@ theme: next
 deploy:
   type: git
   repo: git@github.com:AsapDiablo/asapdiablo.github.io.git
-  branch: gh-pages
+  branch: master
