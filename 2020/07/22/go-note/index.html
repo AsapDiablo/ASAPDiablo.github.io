@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="defer">
+<meta name="description" content="Golang为什么称go是静态语言 首先静态语言和动态语言的定义 静态语言:代码在编译期提供约束:什么约束、约束如何实现 动态语言:代码在运行期提供约束为什么Golang采用静态编译const关键字变量类型   引用类型new和make的区别 new为指定类型分配零值内存并返回指针，不会构造类型内部结构和初始化方式，因此会对内置类型例如map采用new并不会分配键值结构。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="go note">
-<meta property="og:url" content="http://yoursite.com/2020/07/22/go-note-md/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/07/22/go-note/index.html">
 <meta property="og:site_name" content="学习机">
-<meta property="og:description" content="defer">
+<meta property="og:description" content="Golang为什么称go是静态语言 首先静态语言和动态语言的定义 静态语言:代码在编译期提供约束:什么约束、约束如何实现 动态语言:代码在运行期提供约束为什么Golang采用静态编译const关键字变量类型   引用类型new和make的区别 new为指定类型分配零值内存并返回指针，不会构造类型内部结构和初始化方式，因此会对内置类型例如map采用new并不会分配键值结构。">
 <meta property="article:published_time" content="2020-07-22T07:04:25.000Z">
-<meta property="article:modified_time" content="2020-07-22T08:12:32.349Z">
+<meta property="article:modified_time" content="2020-07-23T02:12:45.435Z">
 <meta property="article:author" content="hupac">
 <meta property="article:tag" content="go">
 <meta name="twitter:card" content="summary">
@@ -119,7 +119,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/07/22/go-note-md/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/07/22/go-note/"/>
 
 
 
@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/22/go-note-md/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/22/go-note/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="hupac">
@@ -341,9 +341,17 @@
       
 
       
-        <ol>
-<li>defer</li>
-</ol>
+        <h2 id="Golang"><a href="#Golang" class="headerlink" title="Golang"></a>Golang</h2><h3 id="为什么称go是静态语言"><a href="#为什么称go是静态语言" class="headerlink" title="为什么称go是静态语言"></a>为什么称go是静态语言</h3><ul>
+<li>首先静态语言和动态语言的定义<ul>
+<li>静态语言:代码在编译期提供约束:什么约束、约束如何实现</li>
+<li>动态语言:代码在运行期提供约束<h3 id="为什么Golang采用静态编译"><a href="#为什么Golang采用静态编译" class="headerlink" title="为什么Golang采用静态编译"></a>为什么Golang采用静态编译</h3><h3 id="const关键字"><a href="#const关键字" class="headerlink" title="const关键字"></a>const关键字</h3><h3 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h3></li>
+</ul>
+</li>
+<li>引用类型new和make的区别<ul>
+<li>new为指定类型分配零值内存并返回指针，不会构造类型内部结构和初始化方式，因此会对内置类型例如map采用new并不会分配键值结构。</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -434,8 +442,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -495,6 +512,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Golang"><span class="nav-number">1.</span> <span class="nav-text">Golang</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么称go是静态语言"><span class="nav-number">1.1.</span> <span class="nav-text">为什么称go是静态语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么Golang采用静态编译"><span class="nav-number">1.2.</span> <span class="nav-text">为什么Golang采用静态编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#const关键字"><span class="nav-number">1.3.</span> <span class="nav-text">const关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量类型"><span class="nav-number">1.4.</span> <span class="nav-text">变量类型</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
