@@ -1,5 +1,5 @@
 ---
-title: database
+title: Database
 date: 2020-08-23 20:49:13
 tags: 数据库 mysql
 categories: tech

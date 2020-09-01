@@ -1,5 +1,5 @@
 ---
-title: web
+title: Web
 date: 2020-08-24 23:35:13
 tags: http
 categories: tech

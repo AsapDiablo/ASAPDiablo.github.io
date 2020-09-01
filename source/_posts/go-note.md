@@ -1,7 +1,7 @@
 ---
-title: go note
+title: Golang
 date: 2020-07-22 15:04:25
-tags: go defer
+tags: [go,defer,goruntine, go runtime, gc]
 categories: tech
 keywords: go
 ---
