@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/09/01/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Golang</title>
+    <url>/2020/07/22/go-note/</url>
+    <content><![CDATA[<h1 id="Golang"><a href="#Golang" class="headerlink" title="Golang"></a>Golang</h1><h2 id="静态语言"><a href="#静态语言" class="headerlink" title="静态语言"></a>静态语言</h2><ul>
+<li><p><strong>静态语言和动态语言的定义</strong></p>
+<ul>
+<li>静态语言:代码在编译期提供约束:什么约束、约束如何实现</li>
+<li>动态语言:代码在运行期提供约束</li>
+</ul>
+</li>
+<li><p><strong>为什么Golang采用静态编译</strong><br>go程序在编译时采用静态链接的方式，将所依赖的库函数链接到可执行文件中，虽然可执行文件的体积增大，但是</p>
+<ul>
+<li>减少了程序的部署时间</li>
+<li>加快了程序的执行时间</li>
+</ul>
+</li>
+<li><p><strong>链接</strong><br>地址和空间分配、符号决议(符号绑定)和重定位</p>
+</li>
+<li><p><strong>静态链接</strong></p>
+</li>
+<li><p><strong>动态链接</strong><br>早期计算机内存资源有限，为了节约程序执行时消耗的内存资源，采用动态链接的方式可以使得引用了相同库函数的多个程序在内存中公用一份库函数代码。动态链接分为装入时动态链接和运行时动态链接，由于动态链接使得代码段共享，因此导致符号重定位开销变大。</p>
+<ul>
+<li><p>问题<br>动态链接既然是动态地定位符号的地址，那</p>
+</li>
+<li><p><strong>PIC位置无关代码</strong></p>
+</li>
+<li><p><strong>PLT延迟绑定</strong><br>延迟绑定技术通过过程链接表(PLT)实现</p>
+</li>
+<li><p><strong>DLL Hell</strong>, 问题前提基于</p>
+<ul>
+<li>增加虚函数<ul>
+<li>原本无虚函数: 在类内存起始处增加虚表指针</li>
+<li>原有虚函数: 虚表指针不变，虚表会增加对象。若增加的虚函数在原有虚函数之前，则导致函数调用混乱。</li>
+</ul>
+</li>
+<li>新增成员变量<ul>
+<li>类末尾新增:实际分配内存减少，若访问新增成员则导致内存越界</li>
+<li>类中间新增:直接导致类成员内存偏移</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="go-程序启动"><a href="#go-程序启动" class="headerlink" title="go 程序启动"></a>go 程序启动</h2><h3 id="协程启动过程"><a href="#协程启动过程" class="headerlink" title="协程启动过程"></a>协程启动过程</h3><ul>
+<li>与Linux C程序启动过程的区别<h2 id="go-runtime"><a href="#go-runtime" class="headerlink" title="go runtime"></a>go runtime</h2><h3 id="调度器"><a href="#调度器" class="headerlink" title="调度器"></a>调度器</h3></li>
+<li>调度G-P-M模型<h3 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h3><h3 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h3></li>
+<li>GC并发标记清除</li>
+<li>三色标记法<h3 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h3><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><h4 id="go-runtime和java-虚拟机-python虚拟机有很什么区别"><a href="#go-runtime和java-虚拟机-python虚拟机有很什么区别" class="headerlink" title="go runtime和java 虚拟机, python虚拟机有很什么区别"></a>go runtime和java 虚拟机, python虚拟机有很什么区别</h4></li>
+<li>操作系统线程和java线程:<a href="https://www.jianshu.com/p/7c980955627e" target="_blank" rel="noopener">https://www.jianshu.com/p/7c980955627e</a><h4 id="go-main函数会对应一个goroutine吗？"><a href="#go-main函数会对应一个goroutine吗？" class="headerlink" title="go main函数会对应一个goroutine吗？"></a>go main函数会对应一个goroutine吗？</h4><h2 id="go-并发"><a href="#go-并发" class="headerlink" title="go 并发"></a>go 并发</h2><h3 id="select关键字"><a href="#select关键字" class="headerlink" title="select关键字"></a>select关键字</h3><h3 id="协程概念"><a href="#协程概念" class="headerlink" title="协程概念"></a>协程概念</h3><h3 id="协程调度原理"><a href="#协程调度原理" class="headerlink" title="协程调度原理"></a>协程调度原理</h3></li>
+</ul>
+<h2 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h2><h3 id="变量内存分配"><a href="#变量内存分配" class="headerlink" title="变量内存分配"></a>变量内存分配</h3><ul>
+<li>编译器逃逸分析</li>
+<li>引用类型new和make的区别<ul>
+<li>new为指定类型分配零值内存并返回指针，不会构造类型内部结构和初始化方式，因此会对内置类型例如map采用new并不会分配键值结构。<h3 id="const关键字"><a href="#const关键字" class="headerlink" title="const关键字"></a>const关键字</h3></li>
+</ul>
+</li>
+</ul>
+<h2 id="编程技巧"><a href="#编程技巧" class="headerlink" title="编程技巧"></a>编程技巧</h2><h3 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h3>]]></content>
+      <categories>
+        <category>tech</category>
+      </categories>
+      <tags>
+        <tag>go</tag>
+        <tag>defer</tag>
+        <tag>goruntine</tag>
+        <tag>go runtime</tag>
+        <tag>gc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Database</title>
+    <url>/2020/08/23/database/</url>
+    <content><![CDATA[<h2 id="数据库外键"><a href="#数据库外键" class="headerlink" title="数据库外键"></a>数据库外键</h2><h2 id="分库分表"><a href="#分库分表" class="headerlink" title="分库分表"></a>分库分表</h2><h3 id="水平分表"><a href="#水平分表" class="headerlink" title="水平分表"></a>水平分表</h3><p>实践中当单表数据量超过千万(此数据为道听途说)时，需要将这张大表划分成多张小表以保证sql执行性能.</p>
+<h3 id="水平分库"><a href="#水平分库" class="headerlink" title="水平分库"></a>水平分库</h3><h3 id="垂直分表"><a href="#垂直分表" class="headerlink" title="垂直分表"></a>垂直分表</h3><h3 id="垂直分库"><a href="#垂直分库" class="headerlink" title="垂直分库"></a>垂直分库</h3>]]></content>
+      <categories>
+        <category>tech</category>
+      </categories>
+      <tags>
+        <tag>数据库 mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Web</title>
+    <url>/2020/08/24/web/</url>
+    <content><![CDATA[<h1 id="RESTful-api"><a href="#RESTful-api" class="headerlink" title="RESTful api"></a>RESTful api</h1><p>RESTful api是一种设计模式或者是设计思想，提供在web场景下的接口设计规范。</p>
+<h2 id="REST定义-表现层状态转移"><a href="#REST定义-表现层状态转移" class="headerlink" title="REST定义(表现层状态转移)"></a>REST定义(表现层状态转移)</h2><p>首先web程序主要由三部分组成:表现层、业务层和数据层。<br>http协议是无状态的协议，指服务器不会记录客户端的状态或行为</p>
+<h1 id="服务发现"><a href="#服务发现" class="headerlink" title="服务发现"></a>服务发现</h1><p>consul服务发现</p>
+<ul>
+<li>通过consul agent实现server和client</li>
+<li>健康监测<ul>
+<li>http</li>
+<li>tcp</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>tech</category>
+      </categories>
+      <tags>
+        <tag>http</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Docker</title>
+    <url>/2020/08/29/docker/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>tech</category>
+      </categories>
+      <tags>
+        <tag>docker 容器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>技能树</title>
+    <url>/2020/08/05/life/</url>
+    <content><![CDATA[<h1 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h1><ol>
+<li>答应事情之前首先思考事情本身的合理性<ul>
+<li>例如9月1日交房租事件</li>
+</ul>
+</li>
+<li>思考问题时通过多增加维度的方式加强思考的整体严谨性</li>
+</ol>
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+  </entry>
+</search>
