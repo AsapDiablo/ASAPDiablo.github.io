@@ -176,5 +176,13 @@
 </li>
 </ul>
 ]]></content>
+      <categories>
+        <category>tech</category>
+      </categories>
+      <tags>
+        <tag>golang</tag>
+        <tag>静态编译</tag>
+        <tag>链接</tag>
+      </tags>
   </entry>
 </search>
