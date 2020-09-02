@@ -1249,7 +1249,7 @@ tcp
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  98
+                  601
                 </span>
               
 
@@ -1265,7 +1265,7 @@ tcp
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -1288,10 +1288,20 @@ tcp
       
         
           
-          数据库外键索引索引的目的在于提高查询效率，mysql索引通过B+树实现
-最左匹配原则分库分表水平分表实践中当单表数据量超过千万(此数据为道听途说)时，需要将这张大表划分成多张小表以保证sql执行性能.
-水平分库垂直分表垂直分库
-          
+          数据库外键互联网场景通常不使用外键索引索引的目的在于提高查询效率，InnoDB索引通过B+树实现
+无索引查询存储引擎通过进行全表扫描来获取需要的数据
+B+树
+B+树和B树底层实现
+B树每个节点对应了一个磁盘节点指针，对磁盘节点的一次遍历即代表一次磁盘IO；B+树只有根节点才具有数据==&gt;因此在内存中可以加载更多的B+树节点用于索引。
+B树节点的子节点不可能包含与节点相同的属性值，B+树子节点可以包含，且父节点索引值对应的磁盘块肯定在某个叶子节点中
+B+树所有叶子节点通过指针连接起来，方便做范围查询。B+树结构
+
+
+
+为什么文件索引数据结构使用B+树而不是AVL树    
+从树的结构分析
+
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/08/23/database/#more" rel="contents">
@@ -1682,7 +1692,7 @@ new为指定类型分配零值内存并返回指针，不会构造类型内部�
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">1.6k</span>
+    <span title="Site words total count">2.1k</span>
   
 </div>
 
