@@ -327,6 +327,192 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://asapdiablo.github.io/2020/09/02/%E7%94%B1golang%E9%9D%99%E6%80%81%E7%BC%96%E8%AF%91%E5%BC%95%E5%8F%91%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E6%80%9D%E8%80%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="VegetableChicken">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学习机">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/09/02/%E7%94%B1golang%E9%9D%99%E6%80%81%E7%BC%96%E8%AF%91%E5%BC%95%E5%8F%91%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E6%80%9D%E8%80%83/" itemprop="url">由golang静态编译引发的一系列思考</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-02T17:54:38+08:00">
+                2020-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/09/02/%E7%94%B1golang%E9%9D%99%E6%80%81%E7%BC%96%E8%AF%91%E5%BC%95%E5%8F%91%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E6%80%9D%E8%80%83/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/09/02/%E7%94%B1golang%E9%9D%99%E6%80%81%E7%BC%96%E8%AF%91%E5%BC%95%E5%8F%91%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E6%80%9D%E8%80%83/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/09/02/%E7%94%B1golang%E9%9D%99%E6%80%81%E7%BC%96%E8%AF%91%E5%BC%95%E5%8F%91%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E6%80%9D%E8%80%83/" class="leancloud_visitors" data-flag-title="由golang静态编译引发的一系列思考">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          Golang是静态语言在远古时代计算内存资源以KB为单位时，为了减少因代码重复导致的内存冗余开销，程序员们提出了动态链接库这一解决方案。
+
+静态语言和动态语言的定义
+
+静态语言:编译器在编译期可以执行数据类型检查，静态语言大多要求在变量使用前进行变量声明，例如C, Java. 但随着静态语言的发展，例如C++, Golang中也可以不用在使用前声明变量类型，即通过编译期动态类型推断。
+动态语言:代码在运行期进行数据类型决议，通常决议为赋值变量的类型。例如Python, shell等
+
+
+为什么Golang采用静态编译go程序在编译时采用静态链接的方式，将所依赖的库函数链接到可执行文件中，虽然可
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/09/02/%E7%94%B1golang%E9%9D%99%E6%80%81%E7%BC%96%E8%AF%91%E5%BC%95%E5%8F%91%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E6%80%9D%E8%80%83/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://asapdiablo.github.io/2020/09/01/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1048,7 +1234,7 @@ tcp
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  69
+                  98
                 </span>
               
 
@@ -1087,7 +1273,8 @@ tcp
       
         
           
-          数据库外键分库分表水平分表实践中当单表数据量超过千万(此数据为道听途说)时，需要将这张大表划分成多张小表以保证sql执行性能.
+          数据库外键索引索引的目的在于提高查询效率，mysql索引通过B+树实现
+最左匹配原则分库分表水平分表实践中当单表数据量超过千万(此数据为道听途说)时，需要将这张大表划分成多张小表以保证sql执行性能.
 水平分库垂直分表垂直分库
           
           <!--noindex-->
@@ -1456,7 +1643,7 @@ tcp
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  655
+                  232
                 </span>
               
 
@@ -1472,7 +1659,7 @@ tcp
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  1
                 </span>
               
             </div>
@@ -1495,24 +1682,17 @@ tcp
       
         
           
-          Golang静态语言
-静态语言和动态语言的定义
+          Golanggo 程序启动协程启动过程
+与Linux C程序启动过程的区别go runtime调度器
+调度G-P-M模型内存管理垃圾回收
+GC并发标记清除
+三色标记法反射问题go runtime和java 虚拟机, python虚拟机有很什么区别
+操作系统线程和java线程:https://www.jianshu.com/p/7c980955627ego main函数会对应一个goroutine吗？go 并发select关键字协程概念协程调度原理
 
-静态语言:代码在编译期提供约束:什么约束、约束如何实现
-动态语言:代码在运行期提供约束
-
-
-为什么Golang采用静态编译go程序在编译时采用静态链接的方式，将所依赖的库函数链接到可执行文件中，虽然可执行文件的体积增大，但是
-
-减少了程序的部署时间
-加快了程序的执行时间
-
-
-链接地址和空间分配、符号决议(符号绑定)和重定位
-
-静态链接
-
-动态链接早期计算机内存资源有限，为了节约程序执行时消耗的内存资源，采用动态链接的方式可以使得引用了相同库函数的多个程序在内存中公用一份库函数代码。动态链接分为装入时动态链接和运行时动态链接，由于动态链接使得代码
+变量类型变量内存分配
+编译器逃逸分析
+引用类型new和make的区别
+new为指定类型分配零值内存并返回指针，不会构造类型内部结构和初始化方式，因
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1604,7 +1784,7 @@ tcp
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1694,7 +1874,7 @@ tcp
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">970</span>
+    <span title="Site words total count">1.8k</span>
   
 </div>
 

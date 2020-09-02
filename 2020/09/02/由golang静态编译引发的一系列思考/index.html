@@ -112,12 +112,14 @@
 
 
 
-<meta name="description" content="一只菜鸡">
-<meta property="og:type" content="website">
-<meta property="og:title" content="学习机">
-<meta property="og:url" content="http://asapdiablo.github.io/categories/life/index.html">
+<meta name="description" content="Golang是静态语言在远古时代计算内存资源以KB为单位时，为了减少因代码重复导致的内存冗余开销，程序员们提出了动态链接库这一解决方案。  静态语言和动态语言的定义  静态语言:编译器在编译期可以执行数据类型检查，静态语言大多要求在变量使用前进行变量声明，例如C, Java. 但随着静态语言的发展，例如C++, Golang中也可以不用在使用前声明变量类型，即通过编译期动态类型推断。 动态语言:代">
+<meta property="og:type" content="article">
+<meta property="og:title" content="由golang静态编译引发的一系列思考">
+<meta property="og:url" content="http://asapdiablo.github.io/2020/09/02/%E7%94%B1golang%E9%9D%99%E6%80%81%E7%BC%96%E8%AF%91%E5%BC%95%E5%8F%91%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E6%80%9D%E8%80%83/index.html">
 <meta property="og:site_name" content="学习机">
-<meta property="og:description" content="一只菜鸡">
+<meta property="og:description" content="Golang是静态语言在远古时代计算内存资源以KB为单位时，为了减少因代码重复导致的内存冗余开销，程序员们提出了动态链接库这一解决方案。  静态语言和动态语言的定义  静态语言:编译器在编译期可以执行数据类型检查，静态语言大多要求在变量使用前进行变量声明，例如C, Java. 但随着静态语言的发展，例如C++, Golang中也可以不用在使用前声明变量类型，即通过编译期动态类型推断。 动态语言:代">
+<meta property="article:published_time" content="2020-09-02T09:54:38.000Z">
+<meta property="article:modified_time" content="2020-09-02T10:17:07.424Z">
 <meta property="article:author" content="VegetableChicken">
 <meta name="twitter:card" content="summary">
 
@@ -149,13 +151,13 @@
 
 
 
-  <link rel="canonical" href="http://asapdiablo.github.io/categories/life/"/>
+  <link rel="canonical" href="http://asapdiablo.github.io/2020/09/02/由golang静态编译引发的一系列思考/"/>
 
 
 
 
 
-  <title>分类: life | 学习机</title>
+  <title>由golang静态编译引发的一系列思考 | 学习机</title>
   
 
 
@@ -174,7 +176,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -312,83 +314,267 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>life<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://asapdiablo.github.io/2020/09/02/%E7%94%B1golang%E9%9D%99%E6%80%81%E7%BC%96%E8%AF%91%E5%BC%95%E5%8F%91%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E6%80%9D%E8%80%83/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="VegetableChicken">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学习机">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2020/09/01/hello-world/" itemprop="url">
-              
-                <span itemprop="name">Hello World</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">由golang静态编译引发的一系列思考</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-09-01T20:33:19+08:00"
-              content="2020-09-01" >
-          09-01
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-02T17:54:38+08:00">
+                2020-09-02
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/09/02/%E7%94%B1golang%E9%9D%99%E6%80%81%E7%BC%96%E8%AF%91%E5%BC%95%E5%8F%91%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E6%80%9D%E8%80%83/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/09/02/%E7%94%B1golang%E9%9D%99%E6%80%81%E7%BC%96%E8%AF%91%E5%BC%95%E5%8F%91%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E6%80%9D%E8%80%83/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/09/02/%E7%94%B1golang%E9%9D%99%E6%80%81%E7%BC%96%E8%AF%91%E5%BC%95%E5%8F%91%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E6%80%9D%E8%80%83/" class="leancloud_visitors" data-flag-title="由golang静态编译引发的一系列思考">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/08/05/life/" itemprop="url">
-              
-                <span itemprop="name">技能树</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-08-05T17:51:07+08:00"
-              content="2020-08-05" >
-          08-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
+        <h1 id="Golang是静态语言"><a href="#Golang是静态语言" class="headerlink" title="Golang是静态语言"></a>Golang是静态语言</h1><p>在远古时代计算内存资源以KB为单位时，为了减少因代码重复导致的内存冗余开销，程序员们提出了动态链接库这一解决方案。</p>
+<ul>
+<li><p><strong>静态语言和动态语言的定义</strong></p>
+<ul>
+<li>静态语言:编译器在编译期可以执行数据类型检查，静态语言大多要求在变量使用前进行变量声明，例如C, Java. 但随着静态语言的发展，例如C++, Golang中也可以不用在使用前声明变量类型，即通过编译期动态类型推断。</li>
+<li>动态语言:代码在运行期进行数据类型决议，通常决议为赋值变量的类型。例如Python, shell等</li>
+</ul>
+</li>
+<li><p><strong>为什么Golang采用静态编译</strong><br>go程序在编译时采用静态链接的方式，将所依赖的库函数链接到可执行文件中，虽然可执行文件的体积增大，但是</p>
+<ul>
+<li>减少了程序的部署时间<ul>
+<li>为什么Golang的静态编译可以在分布式环境下便于部署<br>个人理解：在非打包部署的情况下，程序通过静态链接将外部函数和变量加载到可执行文件中，再分发可执行文件到集群上进行部署。若依赖的外部库有更新则执行重新编译并部署。同样的情况若使用动态链接的方式</li>
+</ul>
+</li>
+<li>为什么单机情况用动态链接快，分布式部署时用动态链接会导致工作量变大</li>
+<li>加快了程序的执行时间(符号访问时间)</li>
+</ul>
+</li>
+<li><p><strong>链接</strong><br>链接阶段会执行地址和空间分配、符号决议(符号绑定)和重定位</p>
+</li>
+<li><p><strong>静态链接</strong><br>静态链接主要使用两步链接法:1.空间分配 2.符号解析和重定位</p>
+<ul>
+<li>空间分配<br>传统的空间分配方法为按序叠加法，直接将各个目标文件合并为一个目标文件，这样会导致:1.最终目标文件中有大量零散的程序段 2.段内碎片:若段只有1KB也会在目标文件中占有一个段大小。为了解决上述问题，静态链接时可以采用相似段合并的方法减少目标文件中的冗余段。</li>
+<li>符号解析和重定位<br>利用段基址加段内偏移。在上一步空间分配后各个段(.data, .text, .bss)都会对应到虚拟地址空间中确定的地址。</li>
+</ul>
+</li>
+<li><p><strong>动态链接</strong><br>早期计算机内存资源有限，为了节约程序执行时消耗的内存资源，采用动态链接的方式可以使得引用了相同库函数的多个程序在内存中公用一份库函数代码。动态链接分为装入时动态链接和运行时动态链接，由于动态链接使得代码段共享，因此导致符号重定位开销变大。</p>
+<ul>
+<li><p>问题<br>动态链接既然是动态地定位符号的地址，那</p>
+</li>
+<li><p><strong>PIC位置无关代码</strong></p>
+</li>
+<li><p><strong>PLT延迟绑定</strong><br>延迟绑定技术通过过程链接表(PLT)实现</p>
+</li>
+<li><p><strong>DLL Hell</strong></p>
+<ul>
+<li>增加虚函数<ul>
+<li>原本无虚函数: 在类内存起始处增加虚表指针</li>
+<li>原有虚函数: 虚表指针不变，虚表会增加对象。若增加的虚函数在原有虚函数之前，则导致函数调用混乱。</li>
+</ul>
+</li>
+<li>新增成员变量<ul>
+<li>类末尾新增:实际分配内存减少，若访问新增成员则导致内存越界</li>
+<li>类中间新增:直接导致类成员内存偏移</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>问题</p>
+<ul>
+<li>为什么说Golang静态编译在分布式环境下的部署优于动态链接?<br>我理解程序运行在没有docker(运行环境打包)支持的分布式环境，例如直接在Linux环境下部署程序的话，使用动态链接的方式会导致依赖的库各不相同。例如开发机版本依赖libboost1.0而服务器依赖libboost1.1，这样导致动态链接后的目标文件可能出现DLL Hell.因此在分布式程序的部署，较好的实践是采用静态链接的方式，直接打包可执行文件或将可执行文件的运行环境一起打包。</li>
+<li>为什么说动态链接在更新上优于静态链接?<br>基于单机情况，若静态链接依赖库函数更新了，则会触发重新编译和链接，需要发布新的可执行文件。采用动态链接的方式，若程序依赖的libboost1.0.so若需要更新为libboost1.1.so,可以直接在文件系统使用mv覆盖或者rm之后再cp/mv(不能直接cp new old，会导致segmentfault)，然后程序在装载或运行时便会链接到新的动态库。</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    VegetableChicken
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://asapdiablo.github.io/2020/09/02/%E7%94%B1golang%E9%9D%99%E6%80%81%E7%BC%96%E8%AF%91%E5%BC%95%E5%8F%91%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E6%80%9D%E8%80%83/" title="由golang静态编译引发的一系列思考">http://asapdiablo.github.io/2020/09/02/%E7%94%B1golang%E9%9D%99%E6%80%81%E7%BC%96%E8%AF%91%E5%BC%95%E5%8F%91%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E6%80%9D%E8%80%83/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/09/01/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -396,6 +582,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -416,8 +609,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -491,6 +693,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Golang是静态语言"><span class="nav-number">1.</span> <span class="nav-text">Golang是静态语言</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -643,6 +861,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
