@@ -112,14 +112,14 @@
 
 
 
-<meta name="description" content="Golang是静态语言在远古时代计算内存资源以KB为单位时，为了减少因代码重复导致的内存冗余开销，程序员们提出了动态链接库这一解决方案。  静态语言和动态语言的定义  静态语言:编译器在编译期可以执行数据类型检查，静态语言大多要求在变量使用前进行变量声明，例如C, Java. 但随着静态语言的发展，例如C++, Golang中也可以不用在使用前声明变量类型，即通过编译期动态类型推断。 动态语言:代">
+<meta name="description" content="Golang是静态语言1.定义  静态语言:编译器在编译期可以执行数据类型检查，静态语言大多要求在变量使用前进行变量声明，例如C, Java. 但随着静态语言的发展，例如C++, Golang中也可以不用在使用前声明变量类型，即通过编译期动态类型推断。  动态语言:代码在运行期进行数据类型决议，通常决议为赋值变量的类型。例如Python, shell等。 2.为什么Golang采用静态编译  go">
 <meta property="og:type" content="article">
 <meta property="og:title" content="由golang静态编译引发的一系列思考">
 <meta property="og:url" content="http://asapdiablo.github.io/2020/09/02/%E7%94%B1golang%E9%9D%99%E6%80%81%E7%BC%96%E8%AF%91%E5%BC%95%E5%8F%91%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E6%80%9D%E8%80%83/index.html">
 <meta property="og:site_name" content="学习机">
-<meta property="og:description" content="Golang是静态语言在远古时代计算内存资源以KB为单位时，为了减少因代码重复导致的内存冗余开销，程序员们提出了动态链接库这一解决方案。  静态语言和动态语言的定义  静态语言:编译器在编译期可以执行数据类型检查，静态语言大多要求在变量使用前进行变量声明，例如C, Java. 但随着静态语言的发展，例如C++, Golang中也可以不用在使用前声明变量类型，即通过编译期动态类型推断。 动态语言:代">
+<meta property="og:description" content="Golang是静态语言1.定义  静态语言:编译器在编译期可以执行数据类型检查，静态语言大多要求在变量使用前进行变量声明，例如C, Java. 但随着静态语言的发展，例如C++, Golang中也可以不用在使用前声明变量类型，即通过编译期动态类型推断。  动态语言:代码在运行期进行数据类型决议，通常决议为赋值变量的类型。例如Python, shell等。 2.为什么Golang采用静态编译  go">
 <meta property="article:published_time" content="2020-09-02T09:54:38.000Z">
-<meta property="article:modified_time" content="2020-09-02T10:19:17.593Z">
+<meta property="article:modified_time" content="2020-09-02T10:38:09.704Z">
 <meta property="article:author" content="VegetableChicken">
 <meta property="article:tag" content="golang">
 <meta property="article:tag" content="静态编译">
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.2k
+                  1k
                 </span>
               
 
@@ -451,7 +451,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  3
                 </span>
               
             </div>
@@ -472,63 +472,13 @@
       
 
       
-        <h1 id="Golang是静态语言"><a href="#Golang是静态语言" class="headerlink" title="Golang是静态语言"></a>Golang是静态语言</h1><p>在远古时代计算内存资源以KB为单位时，为了减少因代码重复导致的内存冗余开销，程序员们提出了动态链接库这一解决方案。</p>
-<ul>
-<li><p><strong>静态语言和动态语言的定义</strong></p>
-<ul>
-<li>静态语言:编译器在编译期可以执行数据类型检查，静态语言大多要求在变量使用前进行变量声明，例如C, Java. 但随着静态语言的发展，例如C++, Golang中也可以不用在使用前声明变量类型，即通过编译期动态类型推断。</li>
-<li>动态语言:代码在运行期进行数据类型决议，通常决议为赋值变量的类型。例如Python, shell等</li>
-</ul>
-</li>
-<li><p><strong>为什么Golang采用静态编译</strong><br>go程序在编译时采用静态链接的方式，将所依赖的库函数链接到可执行文件中，虽然可执行文件的体积增大，但是</p>
-<ul>
-<li>减少了程序的部署时间<ul>
-<li>为什么Golang的静态编译可以在分布式环境下便于部署<br>个人理解：在非打包部署的情况下，程序通过静态链接将外部函数和变量加载到可执行文件中，再分发可执行文件到集群上进行部署。若依赖的外部库有更新则执行重新编译并部署。同样的情况若使用动态链接的方式</li>
-</ul>
-</li>
-<li>为什么单机情况用动态链接快，分布式部署时用动态链接会导致工作量变大</li>
-<li>加快了程序的执行时间(符号访问时间)</li>
-</ul>
-</li>
-<li><p><strong>链接</strong><br>链接阶段会执行地址和空间分配、符号决议(符号绑定)和重定位</p>
-</li>
-<li><p><strong>静态链接</strong><br>静态链接主要使用两步链接法:1.空间分配 2.符号解析和重定位</p>
-<ul>
-<li>空间分配<br>传统的空间分配方法为按序叠加法，直接将各个目标文件合并为一个目标文件，这样会导致:1.最终目标文件中有大量零散的程序段 2.段内碎片:若段只有1KB也会在目标文件中占有一个段大小。为了解决上述问题，静态链接时可以采用相似段合并的方法减少目标文件中的冗余段。</li>
-<li>符号解析和重定位<br>利用段基址加段内偏移。在上一步空间分配后各个段(.data, .text, .bss)都会对应到虚拟地址空间中确定的地址。</li>
-</ul>
-</li>
-<li><p><strong>动态链接</strong><br>早期计算机内存资源有限，为了节约程序执行时消耗的内存资源，采用动态链接的方式可以使得引用了相同库函数的多个程序在内存中公用一份库函数代码。动态链接分为装入时动态链接和运行时动态链接，由于动态链接使得代码段共享，因此导致符号重定位开销变大。</p>
-<ul>
-<li><p>问题<br>动态链接既然是动态地定位符号的地址，那</p>
-</li>
-<li><p><strong>PIC位置无关代码</strong></p>
-</li>
-<li><p><strong>PLT延迟绑定</strong><br>延迟绑定技术通过过程链接表(PLT)实现</p>
-</li>
-<li><p><strong>DLL Hell</strong></p>
-<ul>
-<li>增加虚函数<ul>
-<li>原本无虚函数: 在类内存起始处增加虚表指针</li>
-<li>原有虚函数: 虚表指针不变，虚表会增加对象。若增加的虚函数在原有虚函数之前，则导致函数调用混乱。</li>
-</ul>
-</li>
-<li>新增成员变量<ul>
-<li>类末尾新增:实际分配内存减少，若访问新增成员则导致内存越界</li>
-<li>类中间新增:直接导致类成员内存偏移</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>问题</p>
-<ul>
-<li>为什么说Golang静态编译在分布式环境下的部署优于动态链接?<br>我理解程序运行在没有docker(运行环境打包)支持的分布式环境，例如直接在Linux环境下部署程序的话，使用动态链接的方式会导致依赖的库各不相同。例如开发机版本依赖libboost1.0而服务器依赖libboost1.1，这样导致动态链接后的目标文件可能出现DLL Hell.因此在分布式程序的部署，较好的实践是采用静态链接的方式，直接打包可执行文件或将可执行文件的运行环境一起打包。</li>
-<li>为什么说动态链接在更新上优于静态链接?<br>基于单机情况，若静态链接依赖库函数更新了，则会触发重新编译和链接，需要发布新的可执行文件。采用动态链接的方式，若程序依赖的libboost1.0.so若需要更新为libboost1.1.so,可以直接在文件系统使用mv覆盖或者rm之后再cp/mv(不能直接cp new old，会导致segmentfault)，然后程序在装载或运行时便会链接到新的动态库。</li>
-</ul>
-</li>
-</ul>
+        <h1 id="Golang是静态语言"><a href="#Golang是静态语言" class="headerlink" title="Golang是静态语言"></a>Golang是静态语言</h1><h2 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h2><p>  <strong>静态语言</strong>:编译器在编译期可以执行数据类型检查，静态语言大多要求在变量使用前进行变量声明，例如C, Java. 但随着静态语言的发展，例如C++, Golang中也可以不用在使用前声明变量类型，即通过编译期动态类型推断。<br>  <strong>动态语言</strong>:代码在运行期进行数据类型决议，通常决议为赋值变量的类型。例如Python, shell等。</p>
+<h2 id="2-为什么Golang采用静态编译"><a href="#2-为什么Golang采用静态编译" class="headerlink" title="2.为什么Golang采用静态编译"></a>2.为什么Golang采用静态编译</h2><p>  go程序在编译时采用静态链接的方式，将所依赖的库函数链接到可执行文件中，虽然可执行文件的体积增大，但也带来了便利:<br>    <strong>a. 在分布式环境下可以减少因依赖库版本不一致带来的部署问题</strong><br>    <strong>b. 加快了程序的执行时间(符号访问时间)</strong></p>
+<h2 id="3-链接"><a href="#3-链接" class="headerlink" title="3.链接"></a>3.链接</h2><p>  链接阶段会执行地址和空间分配、符号决议(符号绑定)和重定位</p>
+<h3 id="静态链接"><a href="#静态链接" class="headerlink" title="静态链接"></a>静态链接</h3><p>静态链接主要使用两步链接法:<br><strong>1. 空间分配</strong><br> 传统的空间分配方法为按序叠加法，直接将各个目标文件合并为一个目标文件，这样会导致:1.最终目标文件中有大量零散的程序段 2.段内碎片:若段只有1KB也会在目标文件中占有一个段大小。为了解决上述问题，静态链接时可以采用相似段合并的方法减少目标文件中的冗余段。<br><strong>2. 符号解析和重定位</strong><br> 利用段基址加段内偏移。在上一步空间分配后各个段(.data, .text, .bss)都会对应到虚拟地址空间中确定的地址。</p>
+<h3 id="动态链接"><a href="#动态链接" class="headerlink" title="动态链接"></a>动态链接</h3><p>  早期计算机内存资源有限，为了节约程序执行时消耗的内存资源，采用动态链接的方式可以使得引用了相同库函数的多个程序在内存中公用一份库函数代码。动态链接分为装入时动态链接和运行时动态链接，由于动态链接使得代码段共享，因此导致符号重定位开销变大。</p>
+<h4 id="PIC位置无关代码"><a href="#PIC位置无关代码" class="headerlink" title="PIC位置无关代码"></a>PIC位置无关代码</h4><h4 id="PLT延迟绑定"><a href="#PLT延迟绑定" class="headerlink" title="PLT延迟绑定"></a>PLT延迟绑定</h4><pre><code>延迟绑定技术通过过程链接表(PLT)实现</code></pre><h4 id="DLL-Hell"><a href="#DLL-Hell" class="headerlink" title="DLL Hell"></a>DLL Hell</h4><p><strong>1. 增加虚函数</strong><br>a.原本无虚函数: 在类内存起始处增加虚表指针<br>b.原有虚函数: 虚表指针不变，虚表会增加对象。若增加的虚函数在原有虚函数之前，则导致函数调用混乱。<br><strong>2. 新增成员变量</strong><br>a.类末尾新增:实际分配内存减少，若访问新增成员则导致内存越界<br>b.类中间新增:直接导致类成员内存偏移</p>
+<h2 id="4-问题分析"><a href="#4-问题分析" class="headerlink" title="4.问题分析"></a>4.问题分析</h2><p>  <strong>a. 为什么说Golang静态编译在分布式环境下的部署优于动态链接?</strong><br>  我理解程序运行在没有docker(运行环境打包)支持的分布式环境，例如直接在Linux环境下部署程序的话，使用动态链接的方式会导致依赖的库各不相同。例如开发机版本依赖libboost1.0而服务器依赖libboost1.1，这样导致动态链接后的目标文件可能出现DLL Hell.因此在分布式程序的部署，较好的实践是采用静态链接的方式，直接打包可执行文件或将可执行文件的运行环境一起打包。<br>  <strong>b. 为什么说动态链接在更新上优于静态链接?</strong><br>  基于单机情况，若静态链接依赖库函数更新了，则会触发重新编译和链接，需要发布新的可执行文件。采用动态链接的方式，若程序依赖的libboost1.0.so若需要更新为libboost1.1.so,可以直接在文件系统使用mv覆盖或者rm之后再cp/mv(不能直接cp new old，会导致segmentfault)，然后程序在装载或运行时便会链接到新的动态库。</p>
 
       
     </div>
@@ -738,7 +688,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Golang是静态语言"><span class="nav-number">1.</span> <span class="nav-text">Golang是静态语言</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Golang是静态语言"><span class="nav-number">1.</span> <span class="nav-text">Golang是静态语言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-定义"><span class="nav-number">1.1.</span> <span class="nav-text">1.定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-为什么Golang采用静态编译"><span class="nav-number">1.2.</span> <span class="nav-text">2.为什么Golang采用静态编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-链接"><span class="nav-number">1.3.</span> <span class="nav-text">3.链接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#静态链接"><span class="nav-number">1.3.1.</span> <span class="nav-text">静态链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态链接"><span class="nav-number">1.3.2.</span> <span class="nav-text">动态链接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PIC位置无关代码"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">PIC位置无关代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PLT延迟绑定"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">PLT延迟绑定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DLL-Hell"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">DLL Hell</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-问题分析"><span class="nav-number">1.4.</span> <span class="nav-text">4.问题分析</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -779,7 +729,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">1.8k</span>
+    <span title="Site words total count">1.6k</span>
   
 </div>
 
