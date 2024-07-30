@@ -1,3 +1,9 @@
 [submodule "next"]
 	path = themes/next/
 	url = https://github.com/iissnan/hexo-theme-next
+[submodule "blog/themes/ananke"]
+	path = blog/themes/ananke
+	url = https://github.com/theNewDynamic/gohugo-theme-ananke.git
+[submodule "themes/ananke"]
+	path = themes/ananke
+	url = https://github.com/theNewDynamic/gohugo-theme-ananke.git
