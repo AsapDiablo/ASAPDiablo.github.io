@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hupac blog</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on hupac blog</description>
+    <title>Posts on hupac blog</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on hupac blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 01 Aug 2024 10:59:17 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>README</title>
       <link>http://localhost:1313/posts/readme/</link>
